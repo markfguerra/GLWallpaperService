@@ -11,8 +11,8 @@ import javax.microedition.khronos.egl.EGLSurface;
 import javax.microedition.khronos.opengles.GL;
 import javax.microedition.khronos.opengles.GL10;
 
-import android.opengl.BaseConfigChooser.ComponentSizeChooser;
-import android.opengl.BaseConfigChooser.SimpleEGLConfigChooser;
+import net.rbgrn.android.glwallpaperservice.BaseConfigChooser.ComponentSizeChooser;
+import net.rbgrn.android.glwallpaperservice.BaseConfigChooser.SimpleEGLConfigChooser;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.SurfaceHolder;
