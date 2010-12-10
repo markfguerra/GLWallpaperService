@@ -480,7 +480,7 @@ class GLThread extends Thread {
 	// End of member variables protected by the sGLThreadManager monitor.
 
 	private GLWallpaperService.Renderer mRenderer;
-	private ArrayList mEventQueue = new ArrayList();
+	private ArrayList<Runnable> mEventQueue = new ArrayList<Runnable>();
 	private EglHelper mEglHelper;
 
 	GLThread(GLWallpaperService.Renderer renderer, EGLConfigChooser chooser, EGLContextFactory contextFactory,
