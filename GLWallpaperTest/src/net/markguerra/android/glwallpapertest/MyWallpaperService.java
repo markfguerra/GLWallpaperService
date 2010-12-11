@@ -1,5 +1,7 @@
 package net.markguerra.android.glwallpapertest;
 
+import net.rbgrn.android.glwallpaperservice.*;
+
 public class MyWallpaperService extends GLWallpaperService {
 	public MyWallpaperService() {
 		super();
