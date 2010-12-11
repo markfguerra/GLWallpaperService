@@ -14,6 +14,7 @@ public class MyRenderer implements GLWallpaperService.Renderer {
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
 		// Draw a cube
+		autoRotate(gl);
 		mCube.draw(gl);
 	}
 
@@ -47,6 +48,11 @@ public class MyRenderer implements GLWallpaperService.Renderer {
 		gl.glFrontFace(GL10.GL_CCW);
 		//Do not draw the backs of primitives
 		gl.glCullFace(GL10.GL_BACK);
+	}
+
+	private void autoRotate(GL10 gl) {
+		gl.glRotatef(1, 0, 1, 0);
+		gl.glRotatef(0.5f, 1, 0, 0);
 	}
 
 	/**
