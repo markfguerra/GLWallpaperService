@@ -1,4 +1,5 @@
 package net.rbgrn.android.glwallpaperservice;
+
 import java.io.Writer;
 import java.util.ArrayList;
 
