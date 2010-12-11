@@ -9,8 +9,7 @@ public class MyWallpaperService extends GLWallpaperService {
 		return engine;
 	}
 
-	// prefs and sensor interface is optional, just showing that this is where you do all of that - everything that would normally be in an activity is in here.
-	class MyEngine extends GLEngine implements SharedPreferences.OnSharedPreferenceChangeListener, SensorEventListener {
+	class MyEngine extends GLEngine {
 		MyRenderer renderer;
 		public MyEngine() {
 			super();
