@@ -27,3 +27,5 @@ public class MyWallpaperService extends GLWallpaperService {
 			}
 			renderer = null;
 		}
+	}
+}
