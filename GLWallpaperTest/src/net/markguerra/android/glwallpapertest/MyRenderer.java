@@ -6,6 +6,8 @@ import javax.microedition.khronos.opengles.GL10;
 import net.rbgrn.android.glwallpaperservice.*;
 import android.opengl.GLU;
 
+// Original code provided by Robert Green
+// http://www.rbgrn.net/content/354-glsurfaceview-adapted-3d-live-wallpapers
 public class MyRenderer implements GLWallpaperService.Renderer {
 	private GLCube mCube;
 
