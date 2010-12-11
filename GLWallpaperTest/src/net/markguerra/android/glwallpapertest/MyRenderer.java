@@ -9,6 +9,11 @@ import android.opengl.GLU;
 public class MyRenderer implements GLWallpaperService.Renderer {
 	private GLCube mCube;
 
+	// Used for Lighting
+	private static float[] ambientComponent0 = {0.3f, 0.3f, 1.0f, 1.0f};
+	private static float[] diffuseComponent0 = {1.0f, 1.0f, 1.0f, 1.0f};
+	private static float[] lightPosition0 =    {1f, 1f, -1f, 0f};
+
 	public void onDrawFrame(GL10 gl) {
 		gl.glClearColor(0.2f, 0.6f, 0.2f, 1f);
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
@@ -31,8 +36,17 @@ public class MyRenderer implements GLWallpaperService.Renderer {
 		gl.glTranslatef(0, 0, -5);
 		gl.glRotatef(30f, 1, 0, 0);
 
+		gl.glEnable(GL10.GL_LIGHTING);
 		gl.glEnable(GL10.GL_RESCALE_NORMAL);
 		gl.glEnableClientState(GL10.GL_NORMAL_ARRAY);
+		//Set the color of light bouncing off of surfaces to respect the surface color
+		gl.glEnable(GL10.GL_COLOR_MATERIAL);
+
+		setupLightSources(gl);
+
+		// Turn on a global ambient light. The "Cosmic Background Radiation", if you will.
+		float[] ambientLightRGB = {0.3f, 0.3f, 0.3f, 1.0f};
+		gl.glLightModelfv(GL10.GL_LIGHT_MODEL_AMBIENT, ambientLightRGB, 0);
 	}
 
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
@@ -53,6 +67,18 @@ public class MyRenderer implements GLWallpaperService.Renderer {
 	private void autoRotate(GL10 gl) {
 		gl.glRotatef(1, 0, 1, 0);
 		gl.glRotatef(0.5f, 1, 0, 0);
+	}
+
+	private void setupLightSources(GL10 gl) {
+		//Enable Light source 0
+		gl.glEnable(GL10.GL_LIGHT0);
+
+		//Useful part of the Arrays start a 0
+		gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_AMBIENT, ambientComponent0, 0);
+		gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_DIFFUSE, diffuseComponent0, 0);
+
+		//Position the light in the scene
+		gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_POSITION, lightPosition0, 0);
 	}
 
 	/**
