@@ -22,4 +22,11 @@ public class MyRenderer implements GLWallpaperService.Renderer {
 
 	}
 
+	/**
+	 * Called when the engine is destroyed. Do any necessary clean up because
+	 * at this point your renderer instance is now done for.
+	 */
+	public void release() {
+
+	}
 }
