@@ -42,7 +42,6 @@ public class GLCube {
 		topFaceIndices =    BufferFactory.createShortBuffer(6);
 		bottomFaceIndices = BufferFactory.createShortBuffer(6);
 
-		//TODO Consider putting arrays in a static member to allocate less memory
 		// Coordinates for the vertexes of the cube.
 		float[] vertexCoords = {
 				1f,  1f,  0f, // Vertex 0
@@ -63,7 +62,6 @@ public class GLCube {
 		short[] bottomFaceIndicesArray= {2, 7, 3,   7, 4, 3};
 
 		//Coordinates for Normal Vector. Used for Lighting calculations
-		//TODO These values can be pre-calculated and stored using a Display List. See OpenGL Superbible Chapter 11
 		float[] normalCoords = {
 				 0f, 0f, 1f,   0f, 0f, 1f,   0f, 0f, 1f,   0f, 0f, 1f,   0f, 0f, 1f,   0f, 0f, 1f,   //Front Face
 				 1f, 0f, 0f,   1f, 0f, 0f,   1f, 0f, 0f,   1f, 0f, 0f,   1f, 0f, 0f,   1f, 0f, 0f,   //Right Face
