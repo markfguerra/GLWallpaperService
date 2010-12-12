@@ -15,13 +15,13 @@ The easiest way to use this project is by downloading the latest Jar file. You c
 
 Once you have GLWallpaperService.jar, you can add it to your workspace. If needed, setup the SDK and create a new Android workspace as you would normally. Create a new project and use API level 7 or higher. API level 7 which is the necessary API level needed to run a Live Wallpaper. You won't need an Activity in your project if you don't want one. More information is available at http://developer.android.com/ 
 
-Now that you have your Android project, you will need to add GLWallpaperService.jar to your classpath. Here is one way you can do that if you are using Eclipse. These steps were testing in Eclipse Galileo.
+Now that you have your Android project, you will need to add GLWallpaperService.jar to your classpath. Here is one way you can do that if you are using Eclipse. These steps were tested in Eclipse Galileo.
 1. Create a new folder directly under your project folder. We'll call it lib/
-2. Put GLWallpaperService.jar into the res/lib/ folder.
+2. Put GLWallpaperService.jar into the ProjectFolder/lib/ folder.
 3. If Eclipse doesn't see the jar, refresh your project.
 4. Right-click on your Android project. Choose Properties from the menu.
 5. Under "Java Build Path", choose the "Libraries" tab.
-6. Click on the "Add JARs...". Select GLWallpaperService.jar under ProjectName/lib and click ok. Click ok to get out of the Properties window.
+6. Click on the "Add JARs...". Select GLWallpaperService.jar under ProjectFolder/lib and click ok. Click ok to get out of the Properties window.
 7. This will automatically add a line to your .classpath file that reads something like this: 
     <classpathentry kind="lib" path="lib/GLWallpaperService.jar"/>
 
@@ -36,13 +36,14 @@ The next step would be to tell the Android system that you are making a Live Wal
             android:resource="@xml/myglwallpaper" />
     </service>
 
-MyWallpaperService is the name of a Class you will create soon. You can name it what you want, but be consistent. 
+android:name=".MyWallpaperService" corresponds to the name of a class you will create later on. You can name it what you want, but be consistent. 
+android:resource="@xml/myglwallpaper" corresponds to an xml file that you will also create. Likewise, be consistent in your naming here too.
 
 Also, add the following line to AndroidManifest.xml outside of the <Application> tag, but inside the <Manifest> tag:
 
     <uses-feature android:name="android.software.live_wallpaper" android:required="true" />
 
-Next, create a folder and call it ProjectName/res/xml. Create a new file in there and call it myglwallpaper.xml. Place the following content inside.
+Next, create a folder and call it ProjectFolder/res/xml. Create a new file in there and call it myglwallpaper.xml. Place the following content inside.
 
     <?xml version="1.0" encoding="utf-8"?>
     <wallpaper xmlns:android="http://schemas.android.com/apk/res/android"
@@ -51,8 +52,8 @@ Next, create a folder and call it ProjectName/res/xml. Create a new file in ther
 
 Add the following lines to res/values/strings.xml. Use whatever values you like.
 
-    <string name="service_label">Name of your Wallpaper.</string>
-    <string name="description">Description of your wallpaper.</string>
+    <string name="service_label">Name of your Wallpaper</string>
+    <string name="description">Description of your wallpaper</string>
 
 Now it is time to make your two main classes, the Service class and the Renderer class. 
 To create the Renderer class, create a new class that we'll call MyRenderer. It implements the interface GLWallpaperService.Renderer and also has a method called release(). Here is an example.
@@ -81,7 +82,7 @@ To create the Renderer class, create a new class that we'll call MyRenderer. It 
         }
     }
 
-Finally, create a class that extends GLWallpaperService. We'll call it MyWallpaperService. Here is an example.
+Finally, create a class that extends GLWallpaperService. It behaves essentially the same as the Android class WallpaperService. We'll call it MyWallpaperService. Here is an example.
 
     import net.rbgrn.android.glwallpaperservice.*;
     
@@ -117,8 +118,8 @@ Finally, create a class that extends GLWallpaperService. We'll call it MyWallpap
         }
     }
 
-All that remains is to run the project on your phone or Emulator. In Eclipse, create a new run configuration of type "Android Application". Set the Project to the project you created, and click on the "Run" button. This will install the wallpaper on the phone.
+All that remains is to run the project on your phone or Emulator. In Eclipse, create a new run configuration of type "Android Application". Set the Project to the project you created, and click on the "Run" button. This will install the wallpaper on the phone or emulator.
 
-To view the wallpaper, use the Android Live Wallpaper picker screen, and select your Wallpaper. If successful, you will see a green screen using the code above.
+To view the wallpaper, use the Android Live Wallpaper picker screen, and select your Wallpaper. If successful, the code above will display a green screen.
 
 Congratulations, you're all ready to go! Now go forth and build an awesome OpenGL wallpaper.
