@@ -105,7 +105,7 @@ Finally, create a class that extends GLWallpaperService. It behaves essentially 
                 // handle prefs, other initialization
                 renderer = new MyRenderer();
                 setRenderer(renderer);
-                setRenderMode(RENDERMODE_WHEN_DIRTY);
+                setRenderMode(RENDERMODE_CONTINUOUSLY);
             }
             
             public void onDestroy() {
