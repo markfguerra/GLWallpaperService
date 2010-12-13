@@ -26,7 +26,6 @@ public class MyRenderer implements GLWallpaperService.Renderer {
 	}
 
 	public void onSurfaceChanged(GL10 gl, int width, int height) {
-		System.out.println("setup");
 		gl.glMatrixMode(GL10.GL_PROJECTION);
 		gl.glLoadIdentity();
 		GLU.gluPerspective(gl, 60f, (float)width/(float)height, 1f, 100f);
