@@ -32,9 +32,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>GLWallpaperService</name>
+			<name>GLWallpaperService_src</name>
 			<type>2</type>
-			<locationURI>_android_GLWallpaperService/src</locationURI>
+			<locationURI>_android_GLWallpaperService_57b4cd58/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
