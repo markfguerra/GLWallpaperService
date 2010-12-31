@@ -1,5 +1,7 @@
 GLWallpaperService
 ==================
+Version 0.9
+
 A library for making OpenGL Live Wallpapers for Android.
 
 Provided as free open source software under the Apache License version 2.0.
