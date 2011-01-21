@@ -393,6 +393,8 @@ class EglHelper {
 	public GL createSurface(SurfaceHolder holder) {
 		/*
 		 * The window size has changed, so we need to create a new surface.
+		 * 
+		 * Also create a new context to avoid glitches on screen orientation changes. (mblaster)
 		 */
 		if (mEglSurface != null && mEglSurface != EGL10.EGL_NO_SURFACE) {
 
@@ -401,11 +403,13 @@ class EglHelper {
 			 */
 			mEgl.eglMakeCurrent(mEglDisplay, EGL10.EGL_NO_SURFACE, EGL10.EGL_NO_SURFACE, EGL10.EGL_NO_CONTEXT);
 			mEGLWindowSurfaceFactory.destroySurface(mEgl, mEglDisplay, mEglSurface);
+			mEGLContextFactory.destroyContext(mEgl, mEglDisplay, mEglContext);
 		}
 
 		/*
 		 * Create an EGL surface we can render into.
 		 */
+		mEglContext = mEGLContextFactory.createContext(mEgl, mEglDisplay, mEglConfig);
 		mEglSurface = mEGLWindowSurfaceFactory.createWindowSurface(mEgl, mEglDisplay, mEglConfig, holder);
 
 		if (mEglSurface == null || mEglSurface == EGL10.EGL_NO_SURFACE) {
