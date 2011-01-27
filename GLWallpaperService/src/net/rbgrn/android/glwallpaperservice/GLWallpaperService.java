@@ -404,9 +404,21 @@ class EglHelper {
 		}
 
 		/*
+		 * Also create a new context to avoid glitches on screen orientation changes.
+		 */
+		if (mEglContext != null && mEglContext != EGL10.EGL_NO_CONTEXT) {
+			mEGLContextFactory.destroyContext(mEgl, mEglDisplay, mEglContext);
+		}
+
+		/*
 		 * Create an EGL surface we can render into.
 		 */
 		mEglSurface = mEGLWindowSurfaceFactory.createWindowSurface(mEgl, mEglDisplay, mEglConfig, holder);
+
+		/*
+		 * Create an EGL context.
+		 */
+		mEglContext = mEGLContextFactory.createContext(mEgl, mEglDisplay, mEglConfig);
 
 		if (mEglSurface == null || mEglSurface == EGL10.EGL_NO_SURFACE) {
 			throw new RuntimeException("createWindowSurface failed");
