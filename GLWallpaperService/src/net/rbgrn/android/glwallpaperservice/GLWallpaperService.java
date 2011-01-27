@@ -406,9 +406,7 @@ class EglHelper {
 		/*
 		 * Also create a new context to avoid glitches on screen orientation changes.
 		 */
-		if (mEglContext != null && mEglContext != EGL10.EGL_NO_CONTEXT) {
-			mEGLContextFactory.destroyContext(mEgl, mEglDisplay, mEglContext);
-		}
+		mEGLContextFactory.destroyContext(mEgl, mEglDisplay, mEglContext);
 
 		/*
 		 * Create an EGL surface we can render into.
