@@ -316,6 +316,7 @@ class EglHelper {
 	private EGLDisplay mEglDisplay;
 	private EGLSurface mEglSurface;
 	private EGLContext mEglContext;
+	private int mEglContextCounter = 0;
 	EGLConfig mEglConfig;
 
 	private EGLConfigChooser mEGLConfigChooser;
@@ -379,7 +380,9 @@ class EglHelper {
 			if (mEglContext == null || mEglContext == EGL10.EGL_NO_CONTEXT) {
 				throw new RuntimeException("createContext failed");
 			}
+			++mEglContextCounter = 0;
 		} else {
+			++mEglContextCounter = 0;
 			// Log.d("EglHelper" + instanceId, "reusing context");
 		}
 
@@ -457,6 +460,7 @@ class EglHelper {
 	}
 
 	public void finish() {
+		if (--mEglContextCounter != 0) return;
 		if (mEglContext != null) {
 			mEGLContextFactory.destroyContext(mEgl, mEglDisplay, mEglContext);
 			mEglContext = null;
