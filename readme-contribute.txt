@@ -1,6 +1,10 @@
 Project Setup - GLWallpaperService
 ==================================
 
+Discussion Group:
+http://groups.google.com/group/glwallpaperservice
+
+Repository:
 https://github.com/markfguerra/GLWallpaperService/
 
 Intended Audience
