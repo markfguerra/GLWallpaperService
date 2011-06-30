@@ -666,7 +666,9 @@ class GLThread extends Thread {
 					 * Once we're done with GL, we need to call swapBuffers() to instruct the system to display the
 					 * rendered frame
 					 */
-					mEglHelper.swap();
+					synchronized (sGLThreadManager) {
+						mEglHelper.swap();
+					}
 				}
 			}
 		} finally {
