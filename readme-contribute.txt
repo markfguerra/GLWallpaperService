@@ -108,6 +108,15 @@ The wallpaper will now install on your device or emulator. Use the regular Andro
 Now that your run configuration is set up, you can run New_configuration any time by using the Toolbar icon.
 
 
+Creating GLWallpaperService.jar
+-------------------------------
+Do the following to create the JAR file, which is convenient for use in projects.
+In the Eclipse menu, click File -> Export
+Choose "JAR File"
+On the "JAR Export" screen, choose only GLWallpaperService.java. You do not need to include other files.
+Make note of where the JAR will be saved and click Finish
+
+
 Contribute your code
 --------------------
 If you do something cool with this software, we would love it if you would share your changes with us. Even if your changes still need some polishing. Don't worry, we're friendly :)
