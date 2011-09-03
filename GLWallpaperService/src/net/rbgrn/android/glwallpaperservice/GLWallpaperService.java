@@ -32,11 +32,19 @@ import android.opengl.GLSurfaceView;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GLWallpaperService extends WallpaperService {
+    public interface Renderer extends GLSurfaceView.Renderer {
+    }
+
     public class GLEngine extends WallpaperService.Engine {
+	public final static int RENDERMODE_WHEN_DIRTY = 0;
+	public final static int RENDERMODE_CONTINUOUSLY = 1;
+
         private Object lock = new Object();
         private GLSurfaceView mGLSurfaceView = null;
 
@@ -109,6 +117,20 @@ public abstract class GLWallpaperService extends WallpaperService {
                     pendingOperations.add(new Runnable() {
                         public void run() {
                             setRenderer(renderer);
+                        }
+                    });
+                }
+            }
+        }
+
+        public void queueEvent(final Runnable r) {
+            synchronized (lock) {
+                if (mGLSurfaceView != null) {
+                    mGLSurfaceView.queueEvent(r);
+                } else {
+                    pendingOperations.add(new Runnable() {
+                        public void run() {
+                            queueEvent(r);
                         }
                     });
                 }
@@ -189,8 +211,24 @@ public abstract class GLWallpaperService extends WallpaperService {
 
         public void setEGLContextClientVersion(final int version) {
             synchronized (lock) {
+                Method method = null;
+
+                try {
+                    //the setEGLContextClientVersion method is first available in api level 8, but we would
+                    //like to support compiling against api level 7
+                    method = GLSurfaceView.class.getMethod("setEGLContextClientVersion", int.class);
+                } catch (NoSuchMethodException ex) {
+                    return;
+                }
+
                 if (mGLSurfaceView != null) {
-                    mGLSurfaceView.setEGLContextClientVersion(version);
+                    try {
+                        method.invoke(mGLSurfaceView, version);
+                    } catch (IllegalAccessException ex) {
+                        return;
+                    } catch (InvocationTargetException ex) {
+                        return;
+                    }
                 } else {
                     pendingOperations.add(new Runnable() {
                         public void run() {
