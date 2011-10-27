@@ -30,6 +30,11 @@ import javax.microedition.khronos.opengles.GL10;
 
 import net.rbgrn.android.glwallpaperservice.BaseConfigChooser.ComponentSizeChooser;
 import net.rbgrn.android.glwallpaperservice.BaseConfigChooser.SimpleEGLConfigChooser;
+import android.opengl.GLSurfaceView;
+import android.opengl.GLSurfaceView.EGLConfigChooser;
+import android.opengl.GLSurfaceView.EGLContextFactory;
+import android.opengl.GLSurfaceView.EGLWindowSurfaceFactory;
+import android.opengl.GLSurfaceView.GLWrapper;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -234,20 +239,7 @@ class LogWriter extends Writer {
 
 // ----------------------------------------------------------------------
 
-/**
- * An interface for customizing the eglCreateContext and eglDestroyContext calls.
- *
-
- * This interface must be implemented by clients wishing to call
- * {@link GLWallpaperService#setEGLContextFactory(EGLContextFactory)}
- */
-interface EGLContextFactory {
-	EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig eglConfig);
-
-	void destroyContext(EGL10 egl, EGLDisplay display, EGLContext context);
-}
-
-class DefaultContextFactory implements EGLContextFactory {
+class DefaultContextFactory implements GLSurfaceView.EGLContextFactory {
 
 	public EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig config) {
 		return egl.eglCreateContext(display, config, EGL10.EGL_NO_CONTEXT, null);
@@ -258,23 +250,9 @@ class DefaultContextFactory implements EGLContextFactory {
 	}
 }
 
-/**
- * An interface for customizing the eglCreateWindowSurface and eglDestroySurface calls.
- *
+class DefaultWindowSurfaceFactory implements GLSurfaceView.EGLWindowSurfaceFactory {
 
- * This interface must be implemented by clients wishing to call
- * {@link GLWallpaperService#setEGLWindowSurfaceFactory(EGLWindowSurfaceFactory)}
- */
-interface EGLWindowSurfaceFactory {
-	EGLSurface createWindowSurface(EGL10 egl, EGLDisplay display, EGLConfig config, Object nativeWindow);
-
-	void destroySurface(EGL10 egl, EGLDisplay display, EGLSurface surface);
-}
-
-class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
-
-	public EGLSurface createWindowSurface(EGL10 egl, EGLDisplay
-			display, EGLConfig config, Object nativeWindow) {
+	public EGLSurface createWindowSurface(EGL10 egl, EGLDisplay display, EGLConfig config, Object nativeWindow) {
 		// this is a bit of a hack to work around Droid init problems - if you don't have this, it'll get hung up on orientation changes
 		EGLSurface eglSurface = null;
 		while (eglSurface == null) {
@@ -297,17 +275,6 @@ class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
 	public void destroySurface(EGL10 egl, EGLDisplay display, EGLSurface surface) {
 		egl.eglDestroySurface(display, surface);
 	}
-}
-
-interface GLWrapper {
-	/**
-	 * Wraps a gl interface in another gl interface.
-	 *
-	 * @param gl
-	 * a GL interface that is to be wrapped.
-	 * @return either the input argument or another GL object that wraps the input argument.
-	 */
-	GL wrap(GL gl);
 }
 
 class EglHelper {
@@ -840,11 +807,7 @@ class GLThread extends Thread {
 	}
 }
 
-interface EGLConfigChooser {
-	EGLConfig chooseConfig(EGL10 egl, EGLDisplay display);
-}
-
-abstract class BaseConfigChooser implements EGLConfigChooser {
+abstract class BaseConfigChooser implements GLSurfaceView.EGLConfigChooser {
 	public BaseConfigChooser(int[] configSpec) {
 		mConfigSpec = configSpec;
 	}
