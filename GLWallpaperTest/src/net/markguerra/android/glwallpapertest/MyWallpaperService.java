@@ -19,7 +19,7 @@ public class MyWallpaperService extends GLWallpaperService {
 			super();
 			// handle prefs, other initialization
 			renderer = new MyRenderer();
-			setRenderer(renderer);
+			setRenderer(new RendererAdapter(renderer));
 			setRenderMode(RENDERMODE_CONTINUOUSLY);
 		}
 
