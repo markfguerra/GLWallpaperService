@@ -30,6 +30,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 import net.rbgrn.android.glwallpaperservice.BaseConfigChooser.ComponentSizeChooser;
 import net.rbgrn.android.glwallpaperservice.BaseConfigChooser.SimpleEGLConfigChooser;
+import android.opengl.GLSurfaceView;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -189,13 +190,8 @@ public class GLWallpaperService extends WallpaperService {
 		}
 	}
 
-	public interface Renderer {
+	public interface Renderer extends GLSurfaceView.Renderer {
 
-		public void onSurfaceCreated(GL10 gl, EGLConfig config);
-
-		public void onSurfaceChanged(GL10 gl, int width, int height);
-
-		public void onDrawFrame(GL10 gl);
 	}
 }
 
