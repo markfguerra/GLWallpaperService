@@ -1,4 +1,4 @@
-GLWallpaperService - Version 0.9.1
+GLWallpaperService - Version 0.9.2
 ==================================
 http://groups.google.com/group/glwallpaperservice
 
