@@ -13,7 +13,7 @@ Follow these instructions to begin making your OpenGL wallpaper. You can also se
     https://github.com/markfguerra/GLWallpaperExample
 
 The easiest way to use this project is by downloading the latest Jar file. You can find it here:
-    https://github.com/downloads/markfguerra/GLWallpaperService/GLWallpaperService.jar
+    https://github.com/downloads/markfguerra/GLWallpaperService/GLWallpaperService.zip
 
 Once you have GLWallpaperService.jar, you can add it to your workspace. If needed, setup the SDK and create a new Android workspace as you would normally. Create a new project and use API level 7 or higher. API level 7 which is the necessary API level needed to run a Live Wallpaper. You won't need an Activity in your project if you don't want one. More information is available at http://developer.android.com/ 
 
