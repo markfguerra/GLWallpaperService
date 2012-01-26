@@ -1,0 +1,11 @@
+Release Notes - GLWallpaperService
+==================================
+
+Version 0.9.1
+-------------
+* Mitigate a bug that ceases animation and dumps many WaitForCondition(LockCondition) messages to logcat
+
+Version 0.9
+-----------
+* Initial release as copied from rbgrn.net
+
