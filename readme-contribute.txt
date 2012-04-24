@@ -71,12 +71,18 @@ Import the code into the workspace
 ----------------------------------
 In the Eclipse menu, choose File->New->"Android Project"
 Choose "Create new project from existing source"
-For the location click browse and select the "GLWallpaperService" folder. To be clear, this is a sub-folder of the folder that contains the LICENSE file.
+For the location click browse and select the "GLWallpaperService" folder. To be more specific, the project source folder is a sub-folder of the root. The root is the folder that contains the LICENSE file.
 Select "Android 2.1-update1" as your build target. This is API Level 7.
 For the Project Name, type "GLWallpaperService"
 Repeat these steps for the "GLWallpaperTest" folder. Use the project name "GLWallpaperTest"
 
 The code will now be in your workspace.
+
+
+Library Project Setup
+---------------------
+Select the GLWallpaperService project in Eclipse and view its properties. Choose Android from the list, and check the "Is Library" check box.
+Now view the same Android Properties page for the Test project. Under "Library", click "add" and choose GLWallpaperService. Apply and hit Ok.
 
 
 Resolving build errors
