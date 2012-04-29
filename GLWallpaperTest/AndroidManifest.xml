@@ -14,7 +14,7 @@
 		</service>
 
 		<activity
-			android:name=".GalleryActivity"
+			android:name="net.markguerra.android.glwallpapertest.GalleryActivity"
 			android:label="@string/app_name"
 			android:screenOrientation="portrait"
 			android:configChanges="keyboardHidden|orientation"
@@ -29,7 +29,7 @@
 
 		<!-- Begin values for NeHe tutorials lesson 02 -->
 		<service
-			android:name=".LessonWallpaperService"
+			android:name="com.glwallpaperservice.testing.wallpapers.nehe.lesson02.LessonWallpaperService"
 			android:enabled="true"
 			android:label="@string/app_name"
 			android:permission="android.permission.BIND_WALLPAPER">
@@ -42,7 +42,7 @@
 		</service>
 		<activity
 			android:label="@string/app_name"
-			android:name=".LiveWallpaperSettings"
+			android:name="com.glwallpaperservice.testing.wallpapers.nehe.lesson02.LiveWallpaperSettings"
 			android:theme="@android:style/Theme.Light.WallpaperSettings"
 			android:exported="true" />
 		<!-- End values for NeHe tutorials lesson 02 -->
