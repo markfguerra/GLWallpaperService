@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wallpaper 
         xmlns:android="http://schemas.android.com/apk/res/android"  
-        android:thumbnail="@drawable/ic_launcher" 
         android:description="@string/description"
         android:settingsActivity="com.glwallpaperservice.testing.wallpapers.nehe.lesson02.LiveWallpaperSettings"/>
 
