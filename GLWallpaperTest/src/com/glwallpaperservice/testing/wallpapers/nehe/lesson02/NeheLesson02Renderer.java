@@ -4,7 +4,6 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import net.rbgrn.android.glwallpaperservice.GLWallpaperService;
-import android.content.Context;
 import android.hardware.SensorEvent;
 import android.opengl.GLU;
 import android.view.MotionEvent;
@@ -19,29 +18,6 @@ class NeheLesson02Renderer implements GLWallpaperService.Renderer {
 
 	/** Square instance */
 	private Square square;
-
-	// private Room room;
-
-	/* Rotation values */
-	private float xrot; // X Rotation
-	private float yrot; // Y Rotation
-
-	private float xLightRot = 0.0f;
-	private float zLightRot = 5.0f;
-
-	/* Rotation speed values */
-	private float xspeed; // X Rotation Speed ( NEW )
-	private float yspeed; // Y Rotation Speed ( NEW )
-
-	private float xLightSpeed;
-	private float zLightSpeed;
-
-	private float z = -5.0f; // Depth Into The Screen ( NEW )
-
-	private int filter = 1; // Which texture filter? ( NEW )
-
-	/** The Activity Context */
-	private Context context;
 
 	/**
 	 * Set this class as renderer for this GLSurfaceView. Request Focus and set
@@ -58,10 +34,6 @@ class NeheLesson02Renderer implements GLWallpaperService.Renderer {
 	public NeheLesson02Renderer() {
 		triangle = new Triangle();
 		square = new Square();
-	}
-
-	public void setContext(Context value) {
-		context = value;
 	}
 
 	public void release() {

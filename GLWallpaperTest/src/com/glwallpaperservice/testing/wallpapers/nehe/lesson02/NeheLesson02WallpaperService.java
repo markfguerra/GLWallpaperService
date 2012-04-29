@@ -36,7 +36,6 @@ public class NeheLesson02WallpaperService extends GLWallpaperService {
 			super();
 			// handle prefs, other initialization
 			renderer = new NeheLesson02Renderer();
-			renderer.setContext(getBaseContext());
 			setRenderer(renderer);
 			setRenderMode(RENDERMODE_CONTINUOUSLY);
 		}
