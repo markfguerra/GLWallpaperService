@@ -4,4 +4,22 @@
     <string name="app_name">GL Wallpaper Test</string>
     <string name="service_label">GL Wallpaper Test Project</string>
     <string name="description">An OpenGL live wallpaper</string>
+
+    <!-- Begin values for NeHe OpenGL tutorial lesson 02-->
+    <string name="texture">texture</string>
+    <string name="settings_title">Lesson Two Wallpaper settings</string>
+    <string name="preference_xx_title">Configure touch</string>
+    <string name="preference_xx_summary">Touch tracking</string>
+    <string-array name="textureitems">
+        <item>None</item>
+        <item>Linear</item>
+        <item>Mipmaped</item>
+    </string-array>
+    <string-array name="textureitems_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <!-- End values for NeHe OpenGL tutorial lesson 02-->
+
 </resources>
