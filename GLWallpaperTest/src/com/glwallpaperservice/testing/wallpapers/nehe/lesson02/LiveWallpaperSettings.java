@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.nehe.lesson;
+package com.glwallpaperservice.testing.wallpapers.nehe.lesson02;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

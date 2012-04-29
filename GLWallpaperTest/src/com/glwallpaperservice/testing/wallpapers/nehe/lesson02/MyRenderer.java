@@ -1,4 +1,4 @@
-package com.android.nehe.lesson;
+package com.glwallpaperservice.testing.wallpapers.nehe.lesson02;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -7,8 +7,8 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import com.android.nehe.lesson.objects.Square;
-import com.android.nehe.lesson.objects.Triangle;
+import com.glwallpaperservice.testing.wallpapers.nehe.lesson02.objects.Square;
+import com.glwallpaperservice.testing.wallpapers.nehe.lesson02.objects.Triangle;
 import android.content.Context;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
