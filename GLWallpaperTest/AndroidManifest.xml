@@ -40,11 +40,6 @@
 				android:name="android.service.wallpaper"
 				android:resource="@xml/wallpaper" />
 		</service>
-		<activity
-			android:label="@string/app_name"
-			android:name="com.glwallpaperservice.testing.wallpapers.nehe.lesson02.LiveWallpaperSettings"
-			android:theme="@android:style/Theme.Light.WallpaperSettings"
-			android:exported="true" />
 		<!-- End values for NeHe tutorials lesson 02 -->
 
     </application>
