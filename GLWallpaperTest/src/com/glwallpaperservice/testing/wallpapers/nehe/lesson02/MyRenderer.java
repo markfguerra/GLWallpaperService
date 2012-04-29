@@ -9,6 +9,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 import com.glwallpaperservice.testing.wallpapers.nehe.lesson02.objects.Square;
 import com.glwallpaperservice.testing.wallpapers.nehe.lesson02.objects.Triangle;
+import net.rbgrn.android.glwallpaperservice.*;
 import android.content.Context;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;

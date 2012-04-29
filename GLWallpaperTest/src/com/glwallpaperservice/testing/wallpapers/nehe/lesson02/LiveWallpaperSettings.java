@@ -16,6 +16,7 @@
 
 package com.glwallpaperservice.testing.wallpapers.nehe.lesson02;
 
+import net.rbgrn.android.glwallpaperservice.*;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
