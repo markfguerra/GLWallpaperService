@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wallpaper 
+        xmlns:android="http://schemas.android.com/apk/res/android"  
+        android:thumbnail="@drawable/ic_launcher" 
+        android:description="@string/description"
+        android:settingsActivity="com.android.nehe.lesson.LiveWallpaperSettings"/>
+
+        
