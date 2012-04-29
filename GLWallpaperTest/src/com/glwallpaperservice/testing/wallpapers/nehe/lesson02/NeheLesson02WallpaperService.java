@@ -25,11 +25,11 @@ import android.view.SurfaceHolder;
  * @author Daniel Sundberg
  *
  */
-public class LessonWallpaperService extends GLWallpaperService {
+public class NeheLesson02WallpaperService extends GLWallpaperService {
 
 	public static final String PREFERENCES = "nu.danielsundberg.droid.spinbox.livewallpaper";
 		
-	public LessonWallpaperService() {
+	public NeheLesson02WallpaperService() {
 		super();
 	}
 
@@ -40,12 +40,12 @@ public class LessonWallpaperService extends GLWallpaperService {
 
 
 	class MyEngine extends GLEngine implements SharedPreferences.OnSharedPreferenceChangeListener, SensorEventListener {
-		MyRenderer renderer;
+		NeheLesson02Renderer renderer;
 		
 		public MyEngine() {
 			super();
 			// handle prefs, other initialization
-			renderer = new MyRenderer();
+			renderer = new NeheLesson02Renderer();
 			renderer.setContext(getBaseContext());
 			setRenderer(renderer);
 			setRenderMode(RENDERMODE_CONTINUOUSLY);

@@ -19,7 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 
-class MyRenderer implements GLWallpaperService.Renderer {
+class NeheLesson02Renderer implements GLWallpaperService.Renderer {
 	
 	/** Triangle instance */
 	private Triangle triangle;
@@ -67,7 +67,7 @@ class MyRenderer implements GLWallpaperService.Renderer {
 		
 	}
 	
-	public MyRenderer() {
+	public NeheLesson02Renderer() {
 		triangle = new Triangle();
 		square = new Square();
 	}
