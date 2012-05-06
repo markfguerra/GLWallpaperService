@@ -7,4 +7,17 @@
 
 	<string name="nehe_lesson_02_label">GLWS - NeHe Lesson 02</string>
 	<string name="nehe_lesson_02_description">A white squre and triangle</string>
+
+	<string name="settings_title">Lesson Eight Wallpaper settings</string>
+	<string-array name="textureitems">
+		<item>None</item>
+		<item>Linear</item>
+		<item>Mipmaped</item>
+	</string-array>
+	<string-array name="textureitems_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
 </resources>
