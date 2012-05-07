@@ -83,16 +83,13 @@ public class Lesson8WallpaperService extends GLWallpaperService {
 		
 		}
 
-		@Override
 		public void onSharedPreferenceChanged(
 				SharedPreferences sharedPreferences, String key) {
 		}
 
-		@Override
 		public void onAccuracyChanged(Sensor sensor, int accuracy) {
 		}
 
-		@Override
 		public void onSensorChanged(SensorEvent event) {
 //			/renderer.onSensorChanged(event);
 		}
