@@ -7,6 +7,7 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import net.rbgrn.android.glwallpaperservice.*;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -18,7 +19,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
 
-public class Lesson8WallpaperService extends GlWallpaperService {
+public class Lesson8WallpaperService extends GLWallpaperService {
 
 	public static final String PREFERENCES = "nu.danielsundberg.droid.spinbox.livewallpaper";
 		

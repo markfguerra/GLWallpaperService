@@ -7,6 +7,7 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import net.rbgrn.android.glwallpaperservice.*;
 import android.content.Context;
 import android.hardware.SensorEvent;
 import android.opengl.GLU;
@@ -18,7 +19,7 @@ import com.glwallpaperservice.testing.wallpapers.nehe.lesson08.objects.Cube;
 /**
  * Walter Reid (androidgametutorials.com)
  */
-class MyRenderer implements GlWallpaperService.Renderer {
+class MyRenderer implements GLWallpaperService.Renderer {
 
 	private int height;
 	private int width;
