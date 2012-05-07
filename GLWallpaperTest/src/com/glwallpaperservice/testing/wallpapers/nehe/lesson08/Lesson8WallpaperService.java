@@ -1,4 +1,4 @@
-package com.android.nehe.lesson;
+package com.glwallpaperservice.testing.wallpapers.nehe.lesson08;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

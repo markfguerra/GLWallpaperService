@@ -1,4 +1,4 @@
-package com.android.nehe.lesson;
+package com.glwallpaperservice.testing.wallpapers.nehe.lesson08;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -12,7 +12,7 @@ import android.hardware.SensorEvent;
 import android.opengl.GLU;
 import android.view.MotionEvent;
 
-import com.android.nehe.lesson.objects.Cube;
+import com.glwallpaperservice.testing.wallpapers.nehe.lesson08.objects.Cube;
 
 
 /**

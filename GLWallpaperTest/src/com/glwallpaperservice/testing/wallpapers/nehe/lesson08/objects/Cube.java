@@ -1,4 +1,4 @@
-package com.android.nehe.lesson.objects;
+package com.glwallpaperservice.testing.wallpapers.nehe.lesson08.objects;
 
 import java.io.IOException;
 import java.io.InputStream;
