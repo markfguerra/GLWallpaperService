@@ -22,17 +22,16 @@ import android.preference.PreferenceActivity;
 
 /**
  * Settings for the wallpaper
- *  
+ * 
  * @author Daniel Sundberg
- *
+ * 
  */
 public class LiveWallpaperSettings extends PreferenceActivity {
 
-    @Override
-    protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        getPreferenceManager().setSharedPreferencesName(Lesson8WallpaperService.PREFERENCES);
-        addPreferencesFromResource(R.xml.preferences);        
-    }
-
+	@Override
+	protected void onCreate(Bundle icicle) {
+		super.onCreate(icicle);
+		getPreferenceManager().setSharedPreferencesName(Lesson8WallpaperService.PREFERENCES);
+		addPreferencesFromResource(R.xml.preferences);
+	}
 }
