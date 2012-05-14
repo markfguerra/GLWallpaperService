@@ -2,5 +2,5 @@
 <wallpaper
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:description="@string/description"
-	android:settingsActivity="com.android.nehe.lesson.LiveWallpaperSettings"
+	android:settingsActivity="com.glwallpaperservice.testing.wallpapers.nehe.lesson08.LiveWallpaperSettings"
 	/>
