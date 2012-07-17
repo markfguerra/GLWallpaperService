@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wallpaper
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:description="@string/description"
+	android:description="@string/nehe_lesson_08_description"
 	android:settingsActivity="com.glwallpaperservice.testing.wallpapers.nehe.lesson08.LiveWallpaperSettings"
 	/>
