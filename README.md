@@ -1,5 +1,5 @@
 #GLWallpaperService - Version 0.9.2
-
+ 
 [Google Group](http://groups.google.com/group/glwallpaperservice)
 
 A library for making OpenGL Live Wallpapers for Android.
