@@ -53,7 +53,7 @@ public class GLWallpaperService extends WallpaperService {
 		private GLSurfaceView.EGLConfigChooser mEGLConfigChooser;
 		private GLSurfaceView.EGLContextFactory mEGLContextFactory;
 		private GLSurfaceView.EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
-		private GLWrapper mGLWrapper;
+		private GLSurfaceView.GLWrapper mGLWrapper;
 		private int mDebugFlags;
 
 		public GLEngine() {
@@ -107,7 +107,7 @@ public class GLWallpaperService extends WallpaperService {
 		/**
 		 * An EGL helper class.
 		 */
-		public void setGLWrapper(GLWrapper glWrapper) {
+		public void setGLWrapper(GLSurfaceView.GLWrapper glWrapper) {
 			mGLWrapper = glWrapper;
 		}
 
@@ -237,7 +237,7 @@ class LogWriter extends Writer {
 
 /**
  * Empty wrapper for {@link GLSurfaceView.EGLContextFactory}.
- * 
+ *
  * @deprecated Use {@link GLSurfaceView.EGLContextFactory} instead.
  */
 @Deprecated
@@ -257,7 +257,7 @@ class DefaultContextFactory implements GLSurfaceView.EGLContextFactory {
 
 /**
  * Empty wrapper for {@link GLSurfaceView.EGLWindowSurfaceFactory}.
- * 
+ *
  * @deprecated Use {@link GLSurfaceView.EGLWindowSurfaceFactory} instead.
  */
 @Deprecated
@@ -292,15 +292,13 @@ class DefaultWindowSurfaceFactory implements GLSurfaceView.EGLWindowSurfaceFacto
 	}
 }
 
-interface GLWrapper {
-	/**
-	 * Wraps a gl interface in another gl interface.
-	 *
-	 * @param gl
-	 * a GL interface that is to be wrapped.
-	 * @return either the input argument or another GL object that wraps the input argument.
-	 */
-	GL wrap(GL gl);
+/**
+ * Empty wrapper for {@link GLSurfaceView.GLWrapper}.
+ *
+ * @deprecated Use {@link GLSurfaceView.GLWrapper} instead.
+ */
+@Deprecated
+interface GLWrapper extends GLSurfaceView.GLWrapper {
 }
 
 class EglHelper {
@@ -314,10 +312,10 @@ class EglHelper {
 	private GLSurfaceView.EGLConfigChooser mEGLConfigChooser;
 	private GLSurfaceView.EGLContextFactory mEGLContextFactory;
 	private GLSurfaceView.EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
-	private GLWrapper mGLWrapper;
+	private GLSurfaceView.GLWrapper mGLWrapper;
 
 	public EglHelper(GLSurfaceView.EGLConfigChooser chooser, GLSurfaceView.EGLContextFactory contextFactory,
-			GLSurfaceView.EGLWindowSurfaceFactory surfaceFactory, GLWrapper wrapper) {
+			GLSurfaceView.EGLWindowSurfaceFactory surfaceFactory, GLSurfaceView.GLWrapper wrapper) {
 		this.mEGLConfigChooser = chooser;
 		this.mEGLContextFactory = contextFactory;
 		this.mEGLWindowSurfaceFactory = surfaceFactory;
@@ -472,7 +470,7 @@ class GLThread extends Thread {
 	private GLSurfaceView.EGLConfigChooser mEGLConfigChooser;
 	private GLSurfaceView.EGLContextFactory mEGLContextFactory;
 	private GLSurfaceView.EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
-	private GLWrapper mGLWrapper;
+	private GLSurfaceView.GLWrapper mGLWrapper;
 
 	public SurfaceHolder mHolder;
 	private boolean mSizeChanged = true;
@@ -496,7 +494,7 @@ class GLThread extends Thread {
 	private EglHelper mEglHelper;
 
 	GLThread(GLSurfaceView.Renderer renderer, GLSurfaceView.EGLConfigChooser chooser, GLSurfaceView.EGLContextFactory contextFactory,
-			GLSurfaceView.EGLWindowSurfaceFactory surfaceFactory, GLWrapper wrapper) {
+			GLSurfaceView.EGLWindowSurfaceFactory surfaceFactory, GLSurfaceView.GLWrapper wrapper) {
 		super();
 		mDone = false;
 		mWidth = 0;
