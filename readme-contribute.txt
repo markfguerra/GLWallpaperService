@@ -10,7 +10,7 @@ https://github.com/markfguerra/GLWallpaperService/
 Intended Audience
 -----------------
 This document is for developers who want to improve GLWallpaperService. It shows you how to download the source code to to improve it (or break it) as you please using Eclipse.
-If you're only interested in using the software to make an OpenGL Wallpaper, this isn't for you. Instead, look at readme.txt for info on how to get and install the Jar.
+If you're only interested in using the software to make an OpenGL Wallpaper, this isn't for you. Instead, look at README.md for info on how to get and install the Jar.
 
 
 Install required software
@@ -56,7 +56,7 @@ Visit this link if you need help using github:
 
 Start Eclipse
 -------------
-Open Eclipse and choose the folder you just created for your workspace. When it finishes loading, click the Arrow to go to the workbench.
+Open Eclipse and choose the folder you just created for your workspace. When it finishes loading, close any welcome message and go to the workbench.
 
 
 Set up the Android SDK
@@ -69,20 +69,12 @@ Select Android 2.1 (Api level 7) then click Ok.
 
 Import the code into the workspace
 ----------------------------------
-In the Eclipse menu, choose File->New->"Android Project"
-Choose "Create new project from existing source"
-For the location click browse and select the "GLWallpaperService" folder. To be more specific, the project source folder is a sub-folder of the root. The root is the folder that contains the LICENSE file.
-Select "Android 2.1-update1" as your build target. This is API Level 7.
-For the Project Name, type "GLWallpaperService"
-Repeat these steps for the "GLWallpaperTest" folder. Use the project name "GLWallpaperTest"
+In the Eclipse menu, choose File->New->"Project"
+Under "Android", choose "Android Project from Existing Code"
+For the location click browse and select the "GLWallpaperService" folder. To be more specific, the project source folder is a sub-folder of the root of the git repository.
+Repeat the above steps for the "GLWallpaperTest" folder.
 
 The code will now be in your workspace.
-
-
-Library Project Setup
----------------------
-Select the GLWallpaperService project in Eclipse and view its properties. Choose Android from the list, and check the "Is Library" check box.
-Now view the same Android Properties page for the Test project. Under "Library", click "add" and choose GLWallpaperService. Apply and hit Ok.
 
 
 Resolving build errors
