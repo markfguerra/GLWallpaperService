@@ -2,6 +2,8 @@
  
 [Google Group](http://groups.google.com/group/glwallpaperservice)
 
+[Repository](https://github.com/GLWallpaperService/GLWallpaperService)
+
 A library for making OpenGL Live Wallpapers for Android.
 
 Provided as free open source software under the Apache License version 2.0.
@@ -9,14 +11,13 @@ Parts of this software are derived from code provided by the Android Open Source
 
 ##Getting started making your wallpaper
 
-Follow these instructions to begin making your OpenGL wallpaper. Here is the [finished product](https://github.com/markfguerra/GLWallpaperExample) of this tutorial.
 
 ###Get the library
-The easiest way to use this project is by downloading the [latest Jar file](https://github.com/downloads/markfguerra/GLWallpaperService/GLWallpaperService.zip)    
+The easiest way to use this project is by downloading the [latest Jar file](http://glwallpaperservice.com/downloads/releases/current/)
 
 Once you have GLWallpaperService.jar, you can add it to your workspace:
 
-* If needed, setup the [Android SDK](http://developer.android.com/) and/or create a new Android workspace as you would normally 
+* If needed, setup the [Android SDK](http://developer.android.com/sdk/) and/or create a new Android workspace as you would normally
 * Create a new Android project using API level 7 or higher
 * You don't need an Activity in your project if you don't want one, but it can be nice to give users an icon to access your wallpaper settings
 
