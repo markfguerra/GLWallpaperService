@@ -105,7 +105,7 @@ Plug in your Android Device to your computer, if you have one. If you don't plug
 * The name of the run configuration is New_configuration. Change it if you like.
 * Click "Browse..." to choose a project. Select GLWallpaperTest. This is a sample wallpaper that comes with the code.
 * Click Apply. Click Run.
-* The wallpaper will now install on your device or emulator. Use the regular Android live wallpaper picker to select "GL Wallpaper Test Project". You should see a 3D rotating cube.
+* The wallpaper will now install on your device or emulator. Use the regular Android live wallpaper picker to select "GL Wallpaper Test Project". You should see a green screen.
 
 Now that your run configuration is set up, you can run New_configuration any time by using the Toolbar icon.
 
