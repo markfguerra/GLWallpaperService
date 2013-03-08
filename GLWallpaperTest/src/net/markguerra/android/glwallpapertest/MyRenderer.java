@@ -3,12 +3,12 @@ package net.markguerra.android.glwallpapertest;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import net.rbgrn.android.glwallpaperservice.*;
+import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 
 // Original code provided by Robert Green
 // http://www.rbgrn.net/content/354-glsurfaceview-adapted-3d-live-wallpapers
-public class MyRenderer implements GLWallpaperService.Renderer {
+public class MyRenderer implements GLSurfaceView.Renderer {
 	private GLCube mCube;
 
 	// Used for Lighting

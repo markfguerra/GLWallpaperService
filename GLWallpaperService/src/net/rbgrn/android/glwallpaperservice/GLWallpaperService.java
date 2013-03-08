@@ -50,10 +50,10 @@ public class GLWallpaperService extends WallpaperService {
 		public final static int RENDERMODE_CONTINUOUSLY = 1;
 
 		private GLThread mGLThread;
-		private EGLConfigChooser mEGLConfigChooser;
-		private EGLContextFactory mEGLContextFactory;
-		private EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
-		private GLWrapper mGLWrapper;
+		private GLSurfaceView.EGLConfigChooser mEGLConfigChooser;
+		private GLSurfaceView.EGLContextFactory mEGLContextFactory;
+		private GLSurfaceView.EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
+		private GLSurfaceView.GLWrapper mGLWrapper;
 		private int mDebugFlags;
 
 		public GLEngine() {
@@ -107,7 +107,7 @@ public class GLWallpaperService extends WallpaperService {
 		/**
 		 * An EGL helper class.
 		 */
-		public void setGLWrapper(GLWrapper glWrapper) {
+		public void setGLWrapper(GLSurfaceView.GLWrapper glWrapper) {
 			mGLWrapper = glWrapper;
 		}
 
@@ -119,7 +119,7 @@ public class GLWallpaperService extends WallpaperService {
 			return mDebugFlags;
 		}
 
-		public void setRenderer(Renderer renderer) {
+		public void setRenderer(GLSurfaceView.Renderer renderer) {
 			checkRenderThreadState();
 			if (mEGLConfigChooser == null) {
 				mEGLConfigChooser = new SimpleEGLConfigChooser(true);
@@ -134,17 +134,17 @@ public class GLWallpaperService extends WallpaperService {
 			mGLThread.start();
 		}
 
-		public void setEGLContextFactory(EGLContextFactory factory) {
+		public void setEGLContextFactory(GLSurfaceView.EGLContextFactory factory) {
 			checkRenderThreadState();
 			mEGLContextFactory = factory;
 		}
 
-		public void setEGLWindowSurfaceFactory(EGLWindowSurfaceFactory factory) {
+		public void setEGLWindowSurfaceFactory(GLSurfaceView.EGLWindowSurfaceFactory factory) {
 			checkRenderThreadState();
 			mEGLWindowSurfaceFactory = factory;
 		}
 
-		public void setEGLConfigChooser(EGLConfigChooser configChooser) {
+		public void setEGLConfigChooser(GLSurfaceView.EGLConfigChooser configChooser) {
 			checkRenderThreadState();
 			mEGLConfigChooser = configChooser;
 		}
@@ -190,8 +190,13 @@ public class GLWallpaperService extends WallpaperService {
 		}
 	}
 
+	/**
+	 * Empty wrapper for {@link GLSurfaceView.Renderer}.
+	 *
+	 * @deprecated Use {@link GLSurfaceView.Renderer} instead.
+	 */
+	@Deprecated
 	public interface Renderer extends GLSurfaceView.Renderer {
-
 	}
 }
 
@@ -231,19 +236,15 @@ class LogWriter extends Writer {
 // ----------------------------------------------------------------------
 
 /**
- * An interface for customizing the eglCreateContext and eglDestroyContext calls.
+ * Empty wrapper for {@link GLSurfaceView.EGLContextFactory}.
  *
-
- * This interface must be implemented by clients wishing to call
- * {@link GLWallpaperService#setEGLContextFactory(EGLContextFactory)}
+ * @deprecated Use {@link GLSurfaceView.EGLContextFactory} instead.
  */
-interface EGLContextFactory {
-	EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig eglConfig);
-
-	void destroyContext(EGL10 egl, EGLDisplay display, EGLContext context);
+@Deprecated
+interface EGLContextFactory extends GLSurfaceView.EGLContextFactory {
 }
 
-class DefaultContextFactory implements EGLContextFactory {
+class DefaultContextFactory implements GLSurfaceView.EGLContextFactory {
 
 	public EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig config) {
 		return egl.eglCreateContext(display, config, EGL10.EGL_NO_CONTEXT, null);
@@ -255,19 +256,15 @@ class DefaultContextFactory implements EGLContextFactory {
 }
 
 /**
- * An interface for customizing the eglCreateWindowSurface and eglDestroySurface calls.
+ * Empty wrapper for {@link GLSurfaceView.EGLWindowSurfaceFactory}.
  *
-
- * This interface must be implemented by clients wishing to call
- * {@link GLWallpaperService#setEGLWindowSurfaceFactory(EGLWindowSurfaceFactory)}
+ * @deprecated Use {@link GLSurfaceView.EGLWindowSurfaceFactory} instead.
  */
-interface EGLWindowSurfaceFactory {
-	EGLSurface createWindowSurface(EGL10 egl, EGLDisplay display, EGLConfig config, Object nativeWindow);
-
-	void destroySurface(EGL10 egl, EGLDisplay display, EGLSurface surface);
+@Deprecated
+interface EGLWindowSurfaceFactory extends GLSurfaceView.EGLWindowSurfaceFactory {
 }
 
-class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
+class DefaultWindowSurfaceFactory implements GLSurfaceView.EGLWindowSurfaceFactory {
 
 	public EGLSurface createWindowSurface(EGL10 egl, EGLDisplay
 			display, EGLConfig config, Object nativeWindow) {
@@ -295,15 +292,13 @@ class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
 	}
 }
 
-interface GLWrapper {
-	/**
-	 * Wraps a gl interface in another gl interface.
-	 *
-	 * @param gl
-	 * a GL interface that is to be wrapped.
-	 * @return either the input argument or another GL object that wraps the input argument.
-	 */
-	GL wrap(GL gl);
+/**
+ * Empty wrapper for {@link GLSurfaceView.GLWrapper}.
+ *
+ * @deprecated Use {@link GLSurfaceView.GLWrapper} instead.
+ */
+@Deprecated
+interface GLWrapper extends GLSurfaceView.GLWrapper {
 }
 
 class EglHelper {
@@ -314,13 +309,13 @@ class EglHelper {
 	private EGLContext mEglContext;
 	EGLConfig mEglConfig;
 
-	private EGLConfigChooser mEGLConfigChooser;
-	private EGLContextFactory mEGLContextFactory;
-	private EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
-	private GLWrapper mGLWrapper;
+	private GLSurfaceView.EGLConfigChooser mEGLConfigChooser;
+	private GLSurfaceView.EGLContextFactory mEGLContextFactory;
+	private GLSurfaceView.EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
+	private GLSurfaceView.GLWrapper mGLWrapper;
 
-	public EglHelper(EGLConfigChooser chooser, EGLContextFactory contextFactory,
-			EGLWindowSurfaceFactory surfaceFactory, GLWrapper wrapper) {
+	public EglHelper(GLSurfaceView.EGLConfigChooser chooser, GLSurfaceView.EGLContextFactory contextFactory,
+			GLSurfaceView.EGLWindowSurfaceFactory surfaceFactory, GLSurfaceView.GLWrapper wrapper) {
 		this.mEGLConfigChooser = chooser;
 		this.mEGLContextFactory = contextFactory;
 		this.mEGLWindowSurfaceFactory = surfaceFactory;
@@ -472,10 +467,10 @@ class GLThread extends Thread {
 	private final GLThreadManager sGLThreadManager = new GLThreadManager();
 	private GLThread mEglOwner;
 
-	private EGLConfigChooser mEGLConfigChooser;
-	private EGLContextFactory mEGLContextFactory;
-	private EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
-	private GLWrapper mGLWrapper;
+	private GLSurfaceView.EGLConfigChooser mEGLConfigChooser;
+	private GLSurfaceView.EGLContextFactory mEGLContextFactory;
+	private GLSurfaceView.EGLWindowSurfaceFactory mEGLWindowSurfaceFactory;
+	private GLSurfaceView.GLWrapper mGLWrapper;
 
 	public SurfaceHolder mHolder;
 	private boolean mSizeChanged = true;
@@ -494,12 +489,12 @@ class GLThread extends Thread {
 	private boolean mEventsWaiting;
 	// End of member variables protected by the sGLThreadManager monitor.
 
-	private GLWallpaperService.Renderer mRenderer;
+	private GLSurfaceView.Renderer mRenderer;
 	private ArrayList<Runnable> mEventQueue = new ArrayList<Runnable>();
 	private EglHelper mEglHelper;
 
-	GLThread(GLWallpaperService.Renderer renderer, EGLConfigChooser chooser, EGLContextFactory contextFactory,
-			EGLWindowSurfaceFactory surfaceFactory, GLWrapper wrapper) {
+	GLThread(GLSurfaceView.Renderer renderer, GLSurfaceView.EGLConfigChooser chooser, GLSurfaceView.EGLContextFactory contextFactory,
+			GLSurfaceView.EGLWindowSurfaceFactory surfaceFactory, GLSurfaceView.GLWrapper wrapper) {
 		super();
 		mDone = false;
 		mWidth = 0;
@@ -836,11 +831,16 @@ class GLThread extends Thread {
 	}
 }
 
-interface EGLConfigChooser {
-	EGLConfig chooseConfig(EGL10 egl, EGLDisplay display);
+/**
+ * Empty wrapper for {@link GLSurfaceView.EGLConfigChooser}.
+ *
+ * @deprecated Use {@link GLSurfaceView.EGLConfigChooser} instead.
+ */
+@Deprecated
+interface EGLConfigChooser extends GLSurfaceView.EGLConfigChooser {
 }
 
-abstract class BaseConfigChooser implements EGLConfigChooser {
+abstract class BaseConfigChooser implements GLSurfaceView.EGLConfigChooser {
 	public BaseConfigChooser(int[] configSpec) {
 		mConfigSpec = configSpec;
 	}
