@@ -9,7 +9,6 @@ Parts of this software are derived from code provided by the Android Open Source
 
 ##Getting started making your wallpaper
 
-Follow these instructions to begin making your OpenGL wallpaper. Here is the [finished product](https://github.com/markfguerra/GLWallpaperExample) of this tutorial.
 
 ###Get the library
 The easiest way to use this project is by downloading the [latest Jar file](https://github.com/downloads/markfguerra/GLWallpaperService/GLWallpaperService.zip)    
