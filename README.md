@@ -17,7 +17,7 @@ The easiest way to use this project is by downloading the [latest Jar file](http
 
 Once you have GLWallpaperService.jar, you can add it to your workspace:
 
-* If needed, setup the [Android SDK](http://developer.android.com/) and/or create a new Android workspace as you would normally 
+* If needed, setup the [Android SDK](http://developer.android.com/sdk/) and/or create a new Android workspace as you would normally
 * Create a new Android project using API level 7 or higher
 * You don't need an Activity in your project if you don't want one, but it can be nice to give users an icon to access your wallpaper settings
 

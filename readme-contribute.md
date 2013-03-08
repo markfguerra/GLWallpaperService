@@ -16,9 +16,8 @@ If you're only interested in using the software to make an OpenGL Wallpaper, thi
 
 ###Install required software
 
-To start, make sure install Eclipse the latest Android SDK are installed. Optionally, install git. Follow the instructions provided by those software projects to do so.
-    [Eclipse](http://wiki.eclipse.org/FAQ_Where_do_I_get_and_install_Eclipse%3F)
-    [Android SDK](http://developer.android.com/sdk/installing.html)
+To start, make sure Eclipse and the latest Android SDK are installed. The easiest way to get this up and running is to download the Eclipse ADT Bundle from Google. Optionally, install git. Follow the instructions provided by those software projects to do so.
+    [Eclipse with Android SDK](http://developer.android.com/sdk/)
     [Git](http://git-scm.com/)
 
 Also, if you plan on using git, we recommend you make an account on [github](http://github.com/)
@@ -63,7 +62,7 @@ Open Eclipse and choose the folder you just created for your workspace. When it 
 
 ###Set up the Android SDK
 
-To set up the Android SDK for this project
+Set up the Android SDK for this project. If you downloaded the Eclipse ADT Bundle from Google, you can skip this step.
 
 * In the menu, go to Eclipse->Preferences. Go to the Android section.
 * Give it the location of your Android SDK folder. Give it a minute to figure things out.
