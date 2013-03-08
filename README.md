@@ -2,6 +2,8 @@
  
 [Google Group](http://groups.google.com/group/glwallpaperservice)
 
+[Repository](https://github.com/GLWallpaperService/GLWallpaperService)
+
 A library for making OpenGL Live Wallpapers for Android.
 
 Provided as free open source software under the Apache License version 2.0.
@@ -11,7 +13,7 @@ Parts of this software are derived from code provided by the Android Open Source
 
 
 ###Get the library
-The easiest way to use this project is by downloading the [latest Jar file](https://github.com/downloads/markfguerra/GLWallpaperService/GLWallpaperService.zip)    
+The easiest way to use this project is by downloading the [latest Jar file](http://glwallpaperservice.com/downloads/releases/current/)
 
 Once you have GLWallpaperService.jar, you can add it to your workspace:
 

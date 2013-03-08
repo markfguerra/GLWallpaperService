@@ -2,7 +2,7 @@
 
 [Google Group](http://groups.google.com/group/glwallpaperservice)
 
-[Repository](https://github.com/markfguerra/GLWallpaperService/)
+[Repository](https://github.com/GLWallpaperService/GLWallpaperService)
 
 ##Intended Audience
 
@@ -42,14 +42,14 @@ Make a folder for your workspace.
 
 Download the source code. You can do so using git or just a regular old download.
 
-For a direct download, [go here](https://github.com/markfguerra/GLWallpaperService/zipball/master). Extract the zip into a sub folder.
+For a direct download, [go here](http://glwallpaperservice.com/downloads/releases/current/). Extract the zip into a sub folder.
 
-If you use github, please fork this code from their [web interface](https://github.com/markfguerra/GLWallpaperService)
+If you use github, please fork this code from their [web interface](https://github.com/GLWallpaperService/GLWallpaperService)
 
 
-Then you want to make a local clone of your github fork. Github will provide you with your own Url. My clone command looks like this:
+Then you want to make a local clone of your github fork. Github will provide you with your own Url. It should looks something like this:
 
-    git clone git@github.com:markfguerra/GLWallpaperService.git
+    git clone git@github.com:yournamehere/GLWallpaperService.git
 
 A new folder will be created automatically, called GLWallpaperService/ containing your source code.
 
