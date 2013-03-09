@@ -74,7 +74,6 @@ Set up the Android SDK for this project. If you downloaded the Eclipse ADT Bundl
 * In the Eclipse menu, choose File->New->"Project"
 * Under "Android", choose "Android Project from Existing Code"
 * For the location click browse and select the "GLWallpaperService" folder. To be more specific, the project source folder is a sub-folder of the root of the git repository.
-* Repeat the above steps for the "GLWallpaperTest" folder.
 
 The code will now be in your workspace.
 
@@ -85,9 +84,8 @@ Most people should have a working project at this point. However, some folks enc
 
 * First and foremost, make sure you have the latest versions of the Android SDK and Eclipse plugin. This is important, because older versions of the developer tools handle Library Projects differently, so if you have an old version this may cause problems.
 * You may have to fix the Project Properties. Right-click on the "GLWallpaperService" project in the Package Explorer. Select "Android Tools"->"Fix Project Properties".
-* Also fix the project properties for "GLWallpaperTest" the same way.
 * In the menu, click on Project->Clean to clean all projects.
-* In Package Explorer, right-click on the GLWallpaperService project and click on "Refresh". Do the same for GLWallpaperTest.
+* In Package Explorer, right-click on the GLWallpaperService project and click on "Refresh".
 * You may need to click on Project->Clean to clean all projects again after the refresh.
 * Your errors should go away at this point. If not, try using a programming Q&A site such as stackoverflow.com and also search Google.
 
@@ -102,7 +100,7 @@ Plug in your Android Device to your computer, if you have one. If you don't plug
 * Choose "Android Application"
 * Click on the "New" button. This is the button with the plus sign on it.
 * The name of the run configuration is New_configuration. Change it if you like.
-* Click "Browse..." to choose a project. Select GLWallpaperTest. This is a sample wallpaper that comes with the code.
+* Click "Browse..." to choose a project. Select GLWallpaperService. This is a sample wallpaper that comes with the code.
 * Click Apply. Click Run.
 * The wallpaper will now install on your device or emulator. Use the regular Android live wallpaper picker to select "GL Wallpaper Test Project". You should see a green screen.
 
