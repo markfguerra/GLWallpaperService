@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="hello">Hello World!</string>
-    <string name="app_name">GL Wallpaper Test</string>
-    <string name="service_label">GL Wallpaper Test Project</string>
-    <string name="description">An OpenGL live wallpaper</string>
-</resources>

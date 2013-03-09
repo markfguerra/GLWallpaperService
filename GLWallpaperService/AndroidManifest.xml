@@ -27,6 +27,6 @@
 			</intent-filter>
 		</activity>
     </application>
-    <uses-sdk android:minSdkVersion="7" />
+     <uses-sdk android:minSdkVersion="7" />
 	<uses-feature android:name="android.software.live_wallpaper" android:required="true" />
-</manifest> 
+</manifest>
