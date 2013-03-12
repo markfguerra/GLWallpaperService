@@ -89,4 +89,18 @@
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
+    <target name="jar">
+        <mkdir dir="bin/jar"/>
+        <jar destfile="bin/jar/GLWallpaperService.jar" basedir="bin/classes">
+            <manifest>
+                <attribute name="Main-Class" value="GLWallpaperService"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- Path tags are related to an Android issue
+         https://code.google.com/p/android/issues/detail?id=13024
+         -->
+    <path id="android.libraries.src"><path refid="project.libraries.src" /></path>
+    <path id="android.libraries.jars"><path refid="project.libraries.jars" /></path>
 </project>
