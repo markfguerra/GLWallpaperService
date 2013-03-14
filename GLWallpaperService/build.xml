@@ -90,8 +90,12 @@
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
     <target name="jar">
-        <mkdir dir="bin/jar"/>
-        <jar destfile="bin/jar/GLWallpaperService.jar" basedir="bin/classes">
+        <property name="jar.file.name" value="GLWallpaperService.jar" />
+        <property name="jar.dir" value="${out.dir}/jar" />
+        <property name="jar.absolute.file.name" value="${jar.dir}/${jar.file.name}" />
+
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.absolute.file.name}" basedir="${out.dir}/classes">
             <manifest>
                 <attribute name="Main-Class" value="GLWallpaperService"/>
             </manifest>
