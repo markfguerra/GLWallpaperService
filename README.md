@@ -24,14 +24,14 @@ Once you have GLWallpaperService.jar, you can add it to your workspace:
 ###Add the library to your project
 Now that you have your Android project, you will need to add GLWallpaperService.jar to your classpath. Here is one way you can do that if you are using Eclipse. These steps were tested in Eclipse Galileo.
 
-1. Create a new folder directly under your project folder. We'll call it lib/
-2. Put GLWallpaperService.jar into the ProjectFolder/lib/ folder.
+1. Create a new folder directly under your project folder called libs/
+2. Put GLWallpaperService.jar into the ProjectFolder/libs/ folder.
 3. If Eclipse doesn't see the jar, refresh your project.
 4. Right-click on your Android project. Choose Properties from the menu.
 5. Under "Java Build Path", choose the "Libraries" tab.
-6. Click on the "Add JARs...". Select GLWallpaperService.jar under ProjectFolder/lib and click ok. Click ok to get out of the Properties window.
+6. Click on the "Add JARs...". Select GLWallpaperService.jar under ProjectFolder/libs/ and click ok. Click ok to get out of the Properties window.
 7. This will automatically add a line to your .classpath file that reads something like this: 
-    <classpathentry kind="lib" path="lib/GLWallpaperService.jar"/>
+    <classpathentry kind="lib" path="libs/GLWallpaperService.jar"/>
 
 ###Configure AndroidManifest.xml
 The next step would be to tell the Android system that you are making a Live Wallpaper. Place the following code inside your AndroidManifest.xml between the <Application> and </Application> tags
