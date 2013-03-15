@@ -13,7 +13,7 @@ Parts of this software are derived from code provided by the Android Open Source
 
 
 ###Get the library
-The easiest way to use this project is by downloading the [latest Jar file](http://glwallpaperservice.com/downloads/releases/current/)
+The easiest way to use this project is by downloading the [latest Jar file](https://github.com/downloads/markfguerra/GLWallpaperService/GLWallpaperService.jar)
 
 Once you have GLWallpaperService.jar, you can add it to your workspace:
 
@@ -34,7 +34,7 @@ Now that you have your Android project, you will need to add GLWallpaperService.
     <classpathentry kind="lib" path="lib/GLWallpaperService.jar"/>
 
 ###Configure AndroidManifest.xml
-The next step would be to tell the Android system that you are making a Live Wallpaper. Place the following code inside your AndroidManifest.xml between the <Application> and </Application> tags
+The next step would be to tell the Android system that you are making a Live Wallpaper. Place the following code inside your AndroidManifest.xml between the `<Application>` and `</Application>` tags
 
     <service android:label="@string/service_label" android:name=".MyWallpaperService"
         android:permission="android.permission.BIND_WALLPAPER">
@@ -48,7 +48,7 @@ The next step would be to tell the Android system that you are making a Live Wal
 * `android:name=".MyWallpaperService"` corresponds to the name of a class you will create later on. You can name it what you want, but be consistent. 
 * `android:resource="@xml/myglwallpaper"` corresponds to an xml file that you will also create. Likewise, be consistent in your naming here too.
 
-Also, add the following line to AndroidManifest.xml outside of the <Application> tag, but inside the <Manifest> tag:
+Also, add the following line to AndroidManifest.xml outside of the `<Application>` tag, but inside the `<Manifest>` tag:
 
     <uses-feature android:name="android.software.live_wallpaper" android:required="true" />
 
