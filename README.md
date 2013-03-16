@@ -13,7 +13,7 @@ Parts of this software are derived from code provided by the Android Open Source
 
 
 ###Get the library
-The easiest way to use this project is by downloading the [latest Jar file](https://github.com/downloads/markfguerra/GLWallpaperService/GLWallpaperService.jar)
+The easiest way to use this project is by downloading the [latest Jar file](http://glwallpaperservice.com/downloads/releases/current/)
 
 Once you have GLWallpaperService.jar, you can add it to your workspace:
 
