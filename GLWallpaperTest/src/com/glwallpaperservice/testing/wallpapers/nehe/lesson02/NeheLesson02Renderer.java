@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import com.glwallpaperservice.testing.wallpapers.nehe.lesson02.objects.Square;
 import com.glwallpaperservice.testing.wallpapers.nehe.lesson02.objects.Triangle;
 
-class NeheLesson02Renderer implements GLWallpaperService.Renderer {
+public class NeheLesson02Renderer implements GLWallpaperService.Renderer {
 
 	/** Triangle instance */
 	private Triangle triangle;

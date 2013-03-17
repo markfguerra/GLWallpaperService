@@ -18,7 +18,7 @@ import com.glwallpaperservice.testing.wallpapers.nehe.lesson08.objects.Cube;
 /**
  * Walter Reid (androidgametutorials.com)
  */
-class NeheLesson08Renderer implements GLWallpaperService.Renderer {
+public class NeheLesson08Renderer implements GLWallpaperService.Renderer {
 
 	private int height;
 
