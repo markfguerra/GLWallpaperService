@@ -16,8 +16,6 @@ import android.view.SurfaceHolder;
  */
 public class NeheLesson02WallpaperService extends GLWallpaperService {
 
-	public static final String PREFERENCES = "nu.danielsundberg.droid.spinbox.livewallpaper";
-
 	public NeheLesson02WallpaperService() {
 		super();
 	}
