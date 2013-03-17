@@ -18,7 +18,7 @@ import com.glwallpaperservice.testing.wallpapers.nehe.lesson08.objects.Cube;
 /**
  * Walter Reid (androidgametutorials.com)
  */
-class MyRenderer implements GLWallpaperService.Renderer {
+class NeheLesson08Renderer implements GLWallpaperService.Renderer {
 
 	private int height;
 
@@ -63,7 +63,7 @@ class MyRenderer implements GLWallpaperService.Renderer {
 	public void onSensorChanged(SensorEvent event) {
 	}
 
-	public MyRenderer() {
+	public NeheLesson08Renderer() {
 		ByteBuffer byteBuf = ByteBuffer.allocateDirect(lightAmbient.length * 4);
 		byteBuf.order(ByteOrder.nativeOrder());
 		lightAmbientBuffer = byteBuf.asFloatBuffer();

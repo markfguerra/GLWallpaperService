@@ -26,12 +26,12 @@ import android.preference.PreferenceActivity;
  * @author Daniel Sundberg
  * 
  */
-public class LiveWallpaperSettings extends PreferenceActivity {
+public class NeheLesson08SettingsActivity extends PreferenceActivity {
 
 	@Override
 	protected void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		getPreferenceManager().setSharedPreferencesName(Lesson8WallpaperService.PREFERENCES);
-		addPreferencesFromResource(R.xml.preferences);
+		getPreferenceManager().setSharedPreferencesName(NeheLesson08WallpaperService.PREFERENCES);
+		addPreferencesFromResource(R.xml.nehelesson08preferences);
 	}
 }

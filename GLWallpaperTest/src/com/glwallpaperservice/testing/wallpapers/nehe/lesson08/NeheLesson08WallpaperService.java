@@ -9,13 +9,13 @@ import android.hardware.SensorManager;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
-public class Lesson8WallpaperService extends GLWallpaperService {
+public class NeheLesson08WallpaperService extends GLWallpaperService {
 
 	public static final String PREFERENCES = "nu.danielsundberg.droid.spinbox.livewallpaper";
 
 	private SensorManager sm;
 
-	public Lesson8WallpaperService() {
+	public NeheLesson08WallpaperService() {
 		super();
 	}
 
@@ -27,12 +27,12 @@ public class Lesson8WallpaperService extends GLWallpaperService {
 	class MyEngine extends GLEngine implements
 			SharedPreferences.OnSharedPreferenceChangeListener,
 			SensorEventListener {
-		MyRenderer renderer;
+		NeheLesson08Renderer renderer;
 
 		public MyEngine() {
 			super();
 			// handle prefs, other initialization
-			renderer = new MyRenderer();
+			renderer = new NeheLesson08Renderer();
 			renderer.setContext(getBaseContext());
 			setRenderer(renderer);
 			setRenderMode(RENDERMODE_CONTINUOUSLY);
