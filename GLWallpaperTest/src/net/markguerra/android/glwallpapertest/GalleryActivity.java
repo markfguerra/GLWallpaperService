@@ -1,5 +1,7 @@
 package net.markguerra.android.glwallpapertest;
 
+import com.glwallpaperservice.testing.wallpapers.nehe.lesson08.NeheLesson08Renderer;
+
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -16,7 +18,8 @@ public class GalleryActivity extends Activity {
 		//Instantiate OpenGL drawing surface and hold a reference
 		ViewGroup container = (ViewGroup)findViewById(R.id.container);
 		glView = new GLSurfaceView(this);
-		MyRenderer renderer = new MyRenderer();
+		NeheLesson08Renderer renderer = new NeheLesson08Renderer();
+		renderer.setContext(this);
 		glView.setRenderer(renderer);
 
 		//Put the container on the screen for the world to see.
