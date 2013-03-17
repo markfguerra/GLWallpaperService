@@ -18,6 +18,15 @@ public class GalleryActivity extends Activity {
 		//Instantiate OpenGL drawing surface and hold a reference
 		ViewGroup container = (ViewGroup)findViewById(R.id.container);
 		glView = new GLSurfaceView(this);
+
+		int redSize = 8;
+		int greenSize = 8;
+		int blueSize = 8;
+		int alphaSize = 8;
+		int depthSize = 16;
+		int stencilSize = 0;
+		glView.setEGLConfigChooser(redSize, greenSize, blueSize, alphaSize, depthSize, stencilSize);
+
 		NeheLesson08Renderer renderer = new NeheLesson08Renderer();
 		renderer.setContext(this);
 		glView.setRenderer(renderer);
