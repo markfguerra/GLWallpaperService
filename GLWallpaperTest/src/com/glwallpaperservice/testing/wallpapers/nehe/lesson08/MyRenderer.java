@@ -21,7 +21,6 @@ import com.glwallpaperservice.testing.wallpapers.nehe.lesson08.objects.Cube;
 class MyRenderer implements GLWallpaperService.Renderer {
 
 	private int height;
-	private int width;
 
 	/** Cube instance */
 	private Cube cube;
