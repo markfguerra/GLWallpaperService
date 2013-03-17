@@ -23,6 +23,8 @@ import android.preference.PreferenceActivity;
 /**
  * Settings for the wallpaper
  * 
+ * TODO These preferences seem to have no effect
+ * 
  * @author Daniel Sundberg
  * 
  */
