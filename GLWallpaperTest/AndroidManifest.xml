@@ -1,32 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="net.markguerra.android.glwallpapertest"
-      android:versionCode="1"
-      android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
-		<service android:label="@string/service_label" android:name=".MyWallpaperService"
-			android:permission="android.permission.BIND_WALLPAPER">
-			<intent-filter>
-				<action android:name="android.service.wallpaper.WallpaperService" />
-			</intent-filter>
-			<meta-data android:name="android.service.wallpaper"
-				android:resource="@xml/glwallpapertest" />
-		</service>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="net.markguerra.android.glwallpapertest"
+	android:versionCode="1"
+	android:versionName="1.0"
+	>
+
+	<uses-sdk
+		android:minSdkVersion="7"
+		android:targetSdkVersion="7"
+		/>
+
+	<uses-feature
+		android:name="android.software.live_wallpaper"
+		android:required="true"
+		/>
+
+	<supports-screens
+		android:anyDensity="true"
+		/>
+
+	<application
+		android:icon="@drawable/icon"
+		android:label="@string/app_name"
+		>
 
 		<activity
-			android:name=".GalleryActivity"
+			android:name="net.markguerra.android.glwallpapertest.GalleryActivity"
 			android:label="@string/app_name"
 			android:screenOrientation="portrait"
 			android:configChanges="keyboardHidden|orientation"
 			>
 			<intent-filter>
-				<action
-					android:name="android.intent.action.MAIN" />
-				<category
-					android:name="android.intent.category.LAUNCHER" />
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-    </application>
-    <uses-sdk android:minSdkVersion="7" />
-	<uses-feature android:name="android.software.live_wallpaper" android:required="true" />
-</manifest> 
+
+		<!-- Begin values for NeHe tutorials lesson 02 -->
+		<service
+			android:name="com.glwallpaperservice.testing.wallpapers.nehe.lesson02.NeheLesson02WallpaperService"
+			android:enabled="true"
+			android:label="@string/nehe_lesson_02_label"
+			android:permission="android.permission.BIND_WALLPAPER"
+			>
+			<intent-filter android:priority="1" >
+				<action android:name="android.service.wallpaper.WallpaperService" />
+			</intent-filter>
+			<meta-data
+				android:name="android.service.wallpaper"
+				android:resource="@xml/nehelesson02wallpaper"
+				/>
+		</service>
+		<!-- End values for NeHe tutorials lesson 02 -->
+
+		<!-- Begin values for NeHe tutorials lesson 08 -->
+		<service
+			android:name="com.glwallpaperservice.testing.wallpapers.nehe.lesson08.NeheLesson08WallpaperService"
+			android:enabled="true"
+			android:label="@string/nehe_lesson_08_label"
+			android:permission="android.permission.BIND_WALLPAPER"
+			>
+			<intent-filter android:priority="1" >
+				<action android:name="android.service.wallpaper.WallpaperService" />
+			</intent-filter>
+			<meta-data
+				android:name="android.service.wallpaper"
+				android:resource="@xml/nehelesson08wallpaper"
+				/>
+		</service>
+		<activity
+			android:name="com.glwallpaperservice.testing.wallpapers.nehe.lesson08.NeheLesson08SettingsActivity"
+			android:label="@string/app_name"
+			android:theme="@android:style/Theme.Light.WallpaperSettings"
+			android:exported="true"
+			/>
+		<!-- End values for NeHe tutorials lesson 08 -->
+
+	</application>
+
+</manifest>

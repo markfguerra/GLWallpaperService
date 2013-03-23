@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wallpaper
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:thumbnail="@drawable/nehe_thumbnail_lesson08"
+	android:description="@string/nehe_lesson_08_description"
+	android:settingsActivity="com.glwallpaperservice.testing.wallpapers.nehe.lesson08.NeheLesson08SettingsActivity"
+	/>
